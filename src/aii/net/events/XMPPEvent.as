@@ -1,0 +1,8 @@
+/* license section
+
+   Aii is free software: you can redistribute it and/or modify   it under the terms of the GNU General Public License as published by   the Free Software Foundation, either version 3 of the License, or   (at your option) any later version.   Aii is distributed in the hope that it will be useful,   but WITHOUT ANY WARRANTY; without even the implied warranty of   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the   GNU General Public License for more details.   You should have received a copy of the GNU General Public License   along with Aii.  If not, see <http://www.gnu.org/licenses/>.   © Swfdong 2010 */
+package aii.net.events {	import flash.events.Event;
+	public class XMPPEvent extends Event {		//系统状态		public static const CONNECTED:String = "xmpp-connected";		public static const CLOSED:String = "xmpp-closed";		public static const ERROR:String = "xmpp-error";		public static const SUCCESS:String = "xmpp-success";		public static const FAILURE:String = "xmpp-failure";		public static const FEATURE:String = "xmpp-feature";		/*出于人人网发送数据频率角度考虑,以下三个事件不推荐使用		   public static const IQ:String="xmpp-iq";		   public static const PRESENCE:String="xmpp-presence";		 public static const MESSAGE:String="xmpp-message";*/		private var _data:*;
+		public function XMPPEvent(type:String, d:* = null) {			_data = data;			super(type);		}
+		public function get data():* {			return _data;		}
+		public function set data(d:*):void {			_data = d;		}	}}

@@ -1,0 +1,2 @@
+ /*** * @author Swfdong * Aii组件重绘类型，使用位运算区分 */package aii.ui.skins {
+	public class InvalidationType {		public static const ALL:uint = 255;		public static const LAYOUT:uint = 32;		public static const SCROLL:uint = 16;		public static const PROPERTY:uint = 8;		public static const SIZE:uint = 4;		public static const TEXT:uint = 2;		//STATE和STYLE需要重绘的内容基本一样		public static const STATE:uint = 1;		public static const STYLE:uint = 1;	}}

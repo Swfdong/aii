@@ -1,0 +1,9 @@
+/* license section
+
+   Aii is free software: you can redistribute it and/or modify   it under the terms of the GNU General Public License as published by   the Free Software Foundation, either version 3 of the License, or   (at your option) any later version.   Aii is distributed in the hope that it will be useful,   but WITHOUT ANY WARRANTY; without even the implied warranty of   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the   GNU General Public License for more details.   You should have received a copy of the GNU General Public License   along with Aii.  If not, see <http://www.gnu.org/licenses/>.   © Swfdong 2010 */ /*Swfdong 2009   系统负荷控制类 用法：tm.run(循环执行，收尾程序);*/package aii.utils {	import flash.utils.getTimer;	import flash.utils.clearTimeout;	import flash.utils.setTimeout;	import flash.system.System;
+	public class TaskMonitor {		private var limit:uint = 0;		private var sleep:uint = 0;		private var prevTime:uint = 0;		private var timeOut:uint = 0;		private var job:Function;		private var end:Function;
+		public function TaskMonitor(l:uint = 150, s:uint = 50):void {			limit = l;			sleep = s;		}
+		public function condition(c:Boolean):Boolean {			if (c) {				if (getTimer() - prevTime < limit) {					return true;				} else {					timeOut = setTimeout(loop, sleep);				}			} else {				clear();			}			return false;		}
+		public function run(j:Function, e:Function = null):void {			job = j;			end = e;			loop();		}
+		private function clear():void {			clearTimeout(timeOut);			System.gc();			if (end != null) {				end();			}		}
+		private function loop():void {			clearTimeout(timeOut);			prevTime = getTimer();			job();		}	}}

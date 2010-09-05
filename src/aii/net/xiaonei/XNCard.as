@@ -1,0 +1,8 @@
+/* license section
+
+   Aii is free software: you can redistribute it and/or modify   it under the terms of the GNU General Public License as published by   the Free Software Foundation, either version 3 of the License, or   (at your option) any later version.   Aii is distributed in the hope that it will be useful,   but WITHOUT ANY WARRANTY; without even the implied warranty of   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the   GNU General Public License for more details.   You should have received a copy of the GNU General Public License   along with Aii.  If not, see <http://www.gnu.org/licenses/>.   © Swfdong 2010 */ //用户数据类,由于需要频繁读取,考虑到效率问题不使用Getter/Setterpackage aii.net.xiaonei {
+	public final class XNCard {		private var _sid:String;		private var _id:String;		public var jid:String;		public var star:Boolean;		public var vip:Boolean;		public var mobile:Boolean;		public var nick:String;		public var groups:Array;		public var headUrl:String;		public var tinyUrl:String;		public var net:String;		public var status:String;		public var richStatus:String;		public var online:Boolean = false;		public var onlineStatus:String = "unavailable";		public var info:String;		public var update:uint = 0;
+		public function XNCard(i:String, n:String = null, g:Array = null) {			if (i.indexOf("@") != -1) {				id = i;			} else {				_sid = i;				_id = i + "@talk.renren.com";			}			if (n != null) {				nick = n;			} else {				nick = _sid;			}			groups = g;		}
+		public function set id(i:String):void {			_id = i;			_sid = _id.slice(0, _id.lastIndexOf("@"));		}
+		public function get id():String {			return _id;		}
+		public function get sid():String {			return _sid;		}	}}

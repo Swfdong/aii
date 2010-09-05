@@ -1,0 +1,2 @@
+//字符串处理package aii.utils {
+	public final class StringUtil {		public static function replaceLink(s:String):String {			s = s.replace(/href="http:\/\//g, 'href="event:http://');			s = s.replace(/href='http:\/\//g, "href='event:http://");			return s;		}	}}
