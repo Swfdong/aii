@@ -20,8 +20,7 @@ package aii.ui.graphics{
 		 * @param color 填充的颜色值。
 		 * @param alpha 填充的alpha透明度值。
 		 */
-		public function SolidFill()
-		{
+		public function SolidFill(){
 		}
 		public function beginFill(target:Graphics, width:Number, height:Number):void{
 		}

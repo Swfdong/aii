@@ -1,6 +1,5 @@
-/*** * @author Swfdong * Aii标签按钮组件 */package aii.ui.controls.bases {	import aii.ui.core.*;	import aii.ui.factory.TextFactory;	import aii.ui.managers.TextManager;		import flash.events.FocusEvent;	import flash.events.KeyboardEvent;	import flash.text.TextField;	import flash.ui.Keyboard;
-
-	public class LabelButtonBase extends ButtonBase{		//私有属性		protected var textField:TextField;		protected var _label:String = "";
+/*** * @author Swfdong * Aii标签按钮组件 */package aii.ui.controls.bases {	import aii.ui.core.*;	import aii.ui.factory.TextFactory;	import aii.ui.managers.TextManager;		import flash.events.FocusEvent;	import flash.events.KeyboardEvent;	import flash.text.TextField;	import flash.ui.Keyboard;	
+	public class LabelButtonBase extends ButtonBase{		public static const defaultStyle:Object ={hover:{fontColor:0x0452A8},active:{fontColor:0x0452A8}};		//私有属性		protected var textField:TextField;		protected var _label:String = "";
 		//构造		public function LabelButtonBase(args:Object = null):void {			super(args);		}
 		//配置		override protected function config():void {			textField = TextFactory.createTextField();			textField.text=_label;			if (_width==0) {				textField.autoSize="left";				setWidthByLabel();			}			addChild(textField);		}
 		//设定默认宽度		protected function setWidthByLabel():void {			_width = textField.width + 12;			textField.autoSize="none";		}
@@ -10,7 +9,7 @@
 		//键盘响应		protected function keyEventHandler(event:KeyboardEvent):void {			if (event.keyCode == Keyboard.ENTER || event.keyCode == Keyboard.SPACE) {				if (event.type == KeyboardEvent.KEY_DOWN) {					state = 2;				} else {					state = 1;					handleClick();				}				invalidate(InvalidationType.STATE);			}			handleKeyDown(event);		}
 		//按键处理		protected function handleKeyDown(event:KeyboardEvent):void {
 		}
-		//重绘		override protected function draw():void {			buttonMode = _enabled;			if (invalidType & InvalidationType.STATE) {				drawButtonGraphic();				ui.filters = _style.getProperty("filters",state);				//textField.filters = _style.getProperty("filters",state);				TextManager.setSize(textField, _style.getProperty("fontSize",state));				TextManager.setColor(textField, _style.getProperty("fontColor",state));			}			if(invalidType & InvalidationType.TEXT){				textField.text = _label;			}			if (invalidType & InvalidationType.SIZE) {				drawTextLayout();			}		}
+		//重绘		override protected function draw():void {			buttonMode = _enabled;			if (invalidType & InvalidationType.STATE) {				drawButtonGraphic();				ui.filters = _style.getStyle("filters",state);				//textField.filters = _style.getStyle("filters",state);				TextManager.setSize(textField, _style.getStyle("fontSize",state));				TextManager.setColor(textField, _style.getStyle("fontColor",state));			}			if(invalidType & InvalidationType.TEXT){				textField.text = _label;			}			if (invalidType & InvalidationType.SIZE) {				drawTextLayout();			}		}
 		//绘制文本		protected function drawTextLayout():void {			textField.width = _width - 4;			textField.y = (_height - textField.height) >> 1;			textField.x = (_width - textField.width) >> 1;		}
 		//标签文字		public function get label():String {			return _label;		}
 		public function set label(value:String):void {			if (_label != value) {				_label = value;				invalidate(InvalidationType.TEXT);			}		}	}}

@@ -28,7 +28,8 @@ package aii.ui.managers{
 		 */
 		public static function add(client:IRenderClient):void{
 			if(!initted){
-				dispatcher.addEventListener(Event.ENTER_FRAME,enterframeHandler);
+				dispatcher.addEventListener(Event.ENTER_FRAME,enterframeHandler,false, 0, true);
+				initted=true;
 			}
 			renderList[client]=true;
 		}
@@ -39,7 +40,7 @@ package aii.ui.managers{
 			var list:Dictionary=renderList,target:Object;
 			for (target in list) {
 				if(target.stage!=null){
-					target.invalidate();
+					target.validate();
 					delete list[target];
 				}
 			}

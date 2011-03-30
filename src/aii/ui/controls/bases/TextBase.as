@@ -67,9 +67,9 @@ package aii.ui.controls.bases{
 			if (invalidType & InvalidationType.STATE) {
 				ui.graphics.clear();
 				GraphicManager.drawBox(ui.graphics, _width, _height, _style,state);
-				ui.filters = _style.getProperty("filters",state);
-				TextManager.setSize(textField, _style.getProperty("fontSize",state));
-				TextManager.setColor(textField, _style.getProperty("fontColor",state));
+				ui.filters = _style.getStyle("filters",state);
+				TextManager.setSize(textField, _style.getStyle("fontSize",state));
+				TextManager.setColor(textField, _style.getStyle("fontColor",state));
 				if (state == 0 && (textField.text == "" || textField.text == _defaultText)) {
 					textField.text = _defaultText;
 					textField.displayAsPassword = false;

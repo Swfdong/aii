@@ -1,10 +1,16 @@
 package aii.ui.graphics.border{
 	import aii.ui.graphics.IBorder;
+	import aii.ui.graphics.IGraphicFill;
 	import aii.ui.managers.GraphicManager;
 	
 	import flash.display.Graphics;
 	
 	public class GraphicFillBorder implements IBorder{
+		/**
+		 * 色彩填充。
+		 * @default null
+		 */
+		public var fill:IGraphicFill=null;
 		/**
 		 * 顶部边框粗细。
 		 * @default 1
@@ -45,19 +51,14 @@ package aii.ui.graphics.border{
 		 * @default 0
 		 */
 		public var bottomRightRadius:Number = 0;
-		public function GraphicFillBorder()
-		{
+		public function GraphicFillBorder(){
 		}
 		
 		public function draw(target:Graphics, x:Number, y:Number, width:Number, height:Number):void{
-			beginFill(target,width,height);
+			fill.beginFill(target,width,height);
 			GraphicManager.drawRoundRect(target,x, y, width, height, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius);
 			GraphicManager.drawRoundRect(target,x+leftWeight, y+topWeight, width-rightWeight, height-bottomWeight, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius);
-			target.endFill();
-			
-		}
-		//子类覆盖此处即可修改边框着色方法
-		protected function beginFill(target:Graphics,width:Number,height:Number):void{
+			fill.endFill(target);
 		}
 		/**
 		 * 整体边框粗细，也可对四边的粗细进行单独设置。

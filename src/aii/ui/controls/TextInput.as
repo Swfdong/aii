@@ -1,3 +1,3 @@
-/*** * @author Swfdong * Aii单行输入组件 */package aii.ui.controls {	import aii.ui.skins.InvalidationType;	import aii.ui.controls.bases.TextBase;
+/*** * @author Swfdong * Aii单行输入组件 */package aii.ui.controls {	import aii.ui.core.InvalidationType;	import aii.ui.controls.bases.TextBase;
 	public class TextInput extends TextBase {		protected var _maxChars:int = 0;
 		//构造		public function TextInput(args:Object=null):void {			_width = 80;			_height = 26;			super(args);		}		override protected function draw():void {			if (invalidType & InvalidationType.PROPERTY) {				textField.displayAsPassword = _password;				textField.maxChars = _maxChars;			}			super.draw();		}		//最大字数		public function get maxChars():int {			return _maxChars;		}		public function set maxChars(value:int):void {			if (_maxChars != value) {				_maxChars = value;				invalidate(InvalidationType.PROPERTY);			}		}	}}

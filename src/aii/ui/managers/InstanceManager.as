@@ -1,6 +1,5 @@
 package aii.ui.managers{
 	import aii.ui.core.UIComponent;
-	import aii.ui.skins.ISkin;
 	import aii.utils.ClassUtil;
 	
 	import flash.utils.Dictionary;
