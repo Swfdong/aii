@@ -1,4 +1,5 @@
 package aii.ui.graphics{
+	import aii.utils.ObjectUtil;
 	import flash.display.Graphics;
 	/**
 	 * SolidFill类为Graphics对象指定单色填充。
@@ -17,15 +18,16 @@ package aii.ui.graphics{
 		public var alpha:Number=1;
 		/**
 		 * 创建一个新的SolidFill实例。
-		 * @param color 填充的颜色值。
-		 * @param alpha 填充的alpha透明度值。
+		 * @param args 实色填充的参数。
 		 */
-		public function SolidFill(){
+		public function SolidFill(args:Object){
+			ObjectUtil.mergeTo(this,args);
 		}
 		public function beginFill(target:Graphics, width:Number, height:Number):void{
+			target.beginFill(color,alpha);
 		}
-		public function endFill(target:Graphics):void
-		{
+		public function endFill(target:Graphics):void{
+			target.endFill();
 		}
 	}
 }

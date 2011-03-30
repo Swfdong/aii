@@ -1,4 +1,4 @@
- /*   Author:Swfdong   All comments are written in Chinese   Aii单选框组件 */package aii.ui.controls {	import aii.ui.core.*;	import aii.ui.styles.Style;		import flash.events.KeyboardEvent;	import flash.events.MouseEvent;	import flash.ui.Keyboard;
+/** * @author Swfdong * Aii单选框组件 */package aii.ui.controls {	import aii.ui.core.*;	import aii.ui.styles.Style;		import flash.events.KeyboardEvent;	import flash.events.MouseEvent;	import flash.ui.Keyboard;
 	public class RadioButton extends CheckBox {		public static const defaultStyle:Object = {borderRadius:24};		protected static const GROUPS:Vector.<RadioButton> = new Vector.<RadioButton>();		protected static var CURRENT_GROUP:String;		protected var _group:String = "default";
 		//构造		public function RadioButton(args:Object=null):void {			tabEnabled = false;			super(args);		}
 		//配置		override protected function config():void {			super.config();			if (!hasGroup(_group)) {				selected = true;			}			GROUPS.push(this);		}

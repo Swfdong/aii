@@ -8,6 +8,8 @@
     <classEntry path="aii.utils.ClassUtil"/>
     <classEntry path="aii.utils.ColorUtil"/>
     <classEntry path="aii.utils.ObjectUtil"/>
+    <classEntry path="aii.ui.styles.StyleSheet"/>
+    <classEntry path="aii.utils.StyleUtil"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

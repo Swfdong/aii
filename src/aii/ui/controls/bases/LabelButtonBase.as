@@ -1,5 +1,5 @@
 /*** * @author Swfdong * Aii标签按钮组件 */package aii.ui.controls.bases {	import aii.ui.core.*;	import aii.ui.factory.TextFactory;	import aii.ui.managers.TextManager;		import flash.events.FocusEvent;	import flash.events.KeyboardEvent;	import flash.text.TextField;	import flash.ui.Keyboard;	
-	public class LabelButtonBase extends ButtonBase{		public static const defaultStyle:Object ={hover:{fontColor:0x0452A8},active:{fontColor:0x0452A8}};		//私有属性		protected var textField:TextField;		protected var _label:String = "";
+	public class LabelButtonBase extends ButtonBase{		//私有属性		protected var textField:TextField;		protected var _label:String = "";
 		//构造		public function LabelButtonBase(args:Object = null):void {			super(args);		}
 		//配置		override protected function config():void {			textField = TextFactory.createTextField();			textField.text=_label;			if (_width==0) {				textField.autoSize="left";				setWidthByLabel();			}			addChild(textField);		}
 		//设定默认宽度		protected function setWidthByLabel():void {			_width = textField.width + 12;			textField.autoSize="none";		}

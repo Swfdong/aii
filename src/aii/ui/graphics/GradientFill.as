@@ -55,14 +55,14 @@ package aii.ui.graphics{
 		public var ty:Number=0;
 		/**
 		 * 创建一个新的GardientFill实例。
-		 * @param args 参数。
+		 * @param args 渐变填充的参数。
 		 */
 		public function GradientFill(args:Object){
 			ObjectUtil.mergeTo(this,args);
 		}
 		public function beginFill(target:Graphics, width:Number, height:Number):void{
 			var matrix:Matrix=new Matrix();
-			matrix.createGradientBox(width*scaleX,height*scaleY,rotation,tx,ty);
+			matrix.createGradientBox(width*scaleX,height*scaleY,Math.PI*rotation/180,tx,ty);
 			target.beginGradientFill(type,colors,alphas,ratios,matrix);
 		}
 		public function endFill(target:Graphics):void{

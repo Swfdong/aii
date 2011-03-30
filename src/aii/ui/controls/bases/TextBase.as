@@ -12,7 +12,6 @@ package aii.ui.controls.bases{
 	import flash.text.TextField;
 	import flash.text.TextFieldType;
 	public class TextBase extends UIComponent{
-		public static const defaultStyle:Object = {filters:[new DropShadowFilter(1,90,0x0,0.3,6,4,1,1,true)],active:{borderColor:0x3FB600,fillColor:0xFFFFFF,filters:[new DropShadowFilter(2,90,0x0,0.3,8,8,1,1,true),new GlowFilter(0x3FB600, 1, 2,2,4)]}};
 		//记录输入法状态
 		protected static var pime:Boolean = false;
 		//属性

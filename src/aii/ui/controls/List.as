@@ -1,7 +1,7 @@
  /*** * @author Swfdong * Aii列表组件 */package aii.ui.controls {	import aii.ui.core.*;	import aii.ui.styles.*;	import aii.ui.managers.GraphicManager;		import flash.events.MouseEvent;	import flash.filters.DropShadowFilter;
 	public class List extends UIComponent {		protected var _scrollLock:Boolean = false;		protected var _rowHeight:uint = 26;		protected var scrollSlider:Slider;
 		public function List(args:Object=null):void {			_width = _height = 150;			super(args);		}
-		//配置		override protected function config():void {			scrollSlider = new Slider({height:_height,parent: this,lightMode:true});		}
+		//配置		override protected function config():void {			scrollSlider = new Slider({height:_height,width:10,parent: this});		}
 		//配置侦听		override protected function configEvents():void {			addEventListener(MouseEvent.MOUSE_OVER, mouseOverHandler, false, 0, true);			addEventListener(MouseEvent.MOUSE_DOWN, mouseDownHandler, false, 0, true);			addEventListener(MouseEvent.MOUSE_OUT, mouseOutHandler, false, 0, true);			addEventListener(MouseEvent.CLICK, mouseClickHandler, false, 0, true);		}
 		override protected function removeEvents():void {			removeEventListener(MouseEvent.MOUSE_OVER, mouseOverHandler);			removeEventListener(MouseEvent.MOUSE_DOWN, mouseDownHandler);			removeEventListener(MouseEvent.MOUSE_OUT, mouseOutHandler);			removeEventListener(MouseEvent.CLICK, mouseClickHandler);		}
 		//鼠标响应		protected function mouseOverHandler(event:MouseEvent):void {			state = 1;			invalidate(InvalidationType.STATE);		}
@@ -10,4 +10,4 @@
 		protected function mouseUpHandler(event:MouseEvent):void {			stage.removeEventListener(MouseEvent.MOUSE_UP, mouseUpHandler);			if (event.target == this) {				state = 1;			} else {				state = 0;			}			invalidate(InvalidationType.STATE);		}
 		protected function mouseClickHandler(event:MouseEvent):void {			invalidate(InvalidationType.STATE);		}
 		//重绘		override protected function draw():void {			if (invalidType & InvalidationType.STATE) {			}			if (invalidType & InvalidationType.SIZE) {				drawLayout();			}		}
-		protected function drawLayout():void {			ui.graphics.clear();			GraphicManager.drawBox(ui.graphics, _width, _height, _style,state);			ui.filters = _style.getStyle("filters",state);			scrollSlider.x=_width-scrollSlider.width;			scrollSlider.height=_height;		}	}}
+		protected function drawLayout():void {			ui.graphics.clear();			GraphicManager.drawBox(ui.graphics, _width, _height, _style,state);			ui.filters = _style.getStyle("filters",state);			scrollSlider.x=_width-scrollSlider.width;			scrollSlider.height=_height;			scrollSlider.validate();		}	}}

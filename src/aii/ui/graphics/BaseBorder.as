@@ -1,11 +1,10 @@
-package aii.ui.graphics.border{
-	import aii.ui.graphics.IBorder;
-	import aii.ui.graphics.IGraphicFill;
+package aii.ui.graphics{
 	import aii.ui.managers.GraphicManager;
+	import aii.utils.ObjectUtil;
 	
 	import flash.display.Graphics;
 	
-	public class GraphicFillBorder implements IBorder{
+	public class BaseBorder{
 		/**
 		 * 色彩填充。
 		 * @default null
@@ -51,14 +50,38 @@ package aii.ui.graphics.border{
 		 * @default 0
 		 */
 		public var bottomRightRadius:Number = 0;
-		public function GraphicFillBorder(){
+		/**
+		 * 创建一个新的BaseBorder实例，大多数情况下，BaseBorder等于SolidBorder。
+		 * @param args 边框的参数。
+		 */
+		public function BaseBorder(args:Object){
+			ObjectUtil.mergeTo(this,args);
 		}
-		
-		public function draw(target:Graphics, x:Number, y:Number, width:Number, height:Number):void{
-			fill.beginFill(target,width,height);
-			GraphicManager.drawRoundRect(target,x, y, width, height, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius);
-			GraphicManager.drawRoundRect(target,x+leftWeight, y+topWeight, width-rightWeight, height-bottomWeight, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius);
-			fill.endFill(target);
+		/**
+		 * 在Graphic对象内绘制边框。
+		 * @param target 指示用于绘制边框的Graphics对象。 
+		 * @param width 边框的宽度。 
+		 * @param height 边框的高度。 
+		 * @param drawFill 背景填充。
+		 * @param x 边框的横坐标。 
+		 * @param y 边框的纵坐标。
+		 */
+		public function draw(target:Graphics, width:Number, height:Number,drawFill:IGraphicFill=null,x:Number=0, y:Number=0):void{
+			if(drawFill!=null){
+				//背景色彩
+				drawFill.beginFill(target,width,height);
+				GraphicManager.drawRoundRect(target,x+leftWeight, y+topWeight, width-rightWeight, height-bottomWeight, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius);
+				drawFill.endFill(target);
+			}
+			if(leftWeight+topWeight+rightWeight+bottomWeight>0){
+				//绘制边框
+				fill.beginFill(target,width,height);
+				GraphicManager.drawRoundRect(target,x, y, width, height, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius);
+				if(drawFill!=null){
+					GraphicManager.drawRoundRect(target,x+leftWeight, y+topWeight, width-leftWeight-rightWeight, height-topWeight-bottomWeight, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius);
+				}
+				fill.endFill(target);
+			}
 		}
 		/**
 		 * 整体边框粗细，也可对四边的粗细进行单独设置。
