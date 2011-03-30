@@ -18,7 +18,7 @@ package aii.utils{
 					if (ClassUtil.getClass(y[currentProperty])!=Object) {
 						result[currentProperty] = y[currentProperty];
 					}else{
-						result[currentProperty]=mergeTo(result[currentProperty],y[currentProperty]);
+						result[currentProperty]=merge(result[currentProperty],y[currentProperty]);
 					}
 				}
 			}else{
@@ -44,7 +44,7 @@ package aii.utils{
 					for (currentProperty in y) {
 						if (y[currentProperty]!=null) {
 							if(inner&&ClassUtil.getClass(y[currentProperty])==Object){
-								x[currentProperty]=mergeTo(x[currentProperty],y[currentProperty]);
+								x[currentProperty]=merge(x[currentProperty],y[currentProperty]);
 							}else{
 								x[currentProperty] = y[currentProperty];
 							}
@@ -54,7 +54,7 @@ package aii.utils{
 					for (currentProperty in y) {
 						if ((currentProperty in x)&&y[currentProperty]!=null) {
 							if(inner&&ClassUtil.getClass(y[currentProperty])==Object){
-								x[currentProperty]=mergeTo(x[currentProperty],y[currentProperty]);
+								x[currentProperty]=merge(x[currentProperty],y[currentProperty]);
 							}else{
 								x[currentProperty] = y[currentProperty];
 							}
