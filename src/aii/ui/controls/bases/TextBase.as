@@ -27,13 +27,14 @@ package aii.ui.controls.bases{
 		}
 		//配置
 		override protected function config():void {
-			createTextField();
 			textField.height = _height-8;
 			_defaultText = (_defaultText == null ? "" : _defaultText);
 			textField.text = _defaultText;
 			addChild(textField);
 		}
-		protected function createTextField():void{
+		//创建组件子对象
+		override protected function createChildren():void {
+			super.createChildren();
 			textField=TextFactory.createTextField(TextFieldType.INPUT,true);
 		}
 		//焦点侦听

@@ -18,7 +18,7 @@ package aii.ui.managers{
 		/**
 		 * @default 
 		 */
-		protected static var initted:Boolean=false;
+		protected static var initialized:Boolean=false;
 		/**
 		 * @default 
 		 */
@@ -27,9 +27,9 @@ package aii.ui.managers{
 		 * @param client 加入渲染队列的显示对象。
 		 */
 		public static function add(client:IRenderClient):void{
-			if(!initted){
+			if(!initialized){
 				dispatcher.addEventListener(Event.ENTER_FRAME,enterframeHandler,false, 0, true);
-				initted=true;
+				initialized=true;
 			}
 			renderList[client]=true;
 		}
@@ -39,8 +39,9 @@ package aii.ui.managers{
 		protected static function enterframeHandler(event:Event):void{
 			var list:Dictionary=renderList,target:Object;
 			for (target in list) {
-				if(target.stage!=null||target.visible==true){
+				if(target.canValidate){
 					target.validate();
+					trace("A");
 					delete list[target];
 				}
 			}

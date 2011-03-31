@@ -78,7 +78,7 @@ package aii.ui.styles{
 							radius:2,
 							fill:new GradientFill({
 								colors:[0xFFFFFF,0xFFFFFF],
-								alphas:[0.5,0.2],
+								alphas:[0.6,0.2],
 								ratios:[20,240],
 								rotation:90
 							})
@@ -106,7 +106,7 @@ package aii.ui.styles{
 							radius:2,
 							fill:new GradientFill({
 								colors:[0xFFFFFF,0xFFFFFF],
-								alphas:[0.5,0.2],
+								alphas:[0.6,0.2],
 								ratios:[20,240],
 								rotation:90
 							})
@@ -215,7 +215,7 @@ package aii.ui.styles{
 							radius:24,
 							fill:new GradientFill({
 								colors:[0xFFFFFF,0xFFFFFF],
-								alphas:[0.5,0.2],
+								alphas:[0.6,0.2],
 								ratios:[20,240],
 								rotation:90
 							})
@@ -243,7 +243,7 @@ package aii.ui.styles{
 							radius:24,
 							fill:new GradientFill({
 								colors:[0xFFFFFF,0xFFFFFF],
-								alphas:[0.5,0.2],
+								alphas:[0.6,0.2],
 								ratios:[20,240],
 								rotation:90
 							})
@@ -263,7 +263,7 @@ package aii.ui.styles{
 			//滑块样式
 			sheet["SliderTrack"]={
 				border:new SolidBorder({
-					weight:1,
+					radius:3,
 					fill:new SolidFill({
 						color:0xAAAAAA
 					})	

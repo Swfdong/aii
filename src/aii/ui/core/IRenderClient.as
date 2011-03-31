@@ -6,5 +6,6 @@ package aii.ui.core{
 	public interface IRenderClient{
 		
 		function validate():void;
+		function get canValidate():Boolean;
 	}
 }
