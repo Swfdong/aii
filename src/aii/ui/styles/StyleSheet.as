@@ -41,7 +41,6 @@ package aii.ui.styles{
 						color:0xEEEEEE
 					}),
 					border:new SolidBorder({
-						radius:0,
 						fill:new SolidFill({
 							color:0x999999
 						})
@@ -140,12 +139,34 @@ package aii.ui.styles{
 			//滑块样式
 			sheet["SliderTrack"]={
 				border:new SolidBorder({
+					weight:1,
+					fill:new SolidFill({
+						color:0xAAAAAA
+					})	
+				}),
+				filters:[new DropShadowFilter(2, 90,0x333333, 1, 8, 6, 0.3, 1,true)],
+				fill:new SolidFill({
+					color:0xDDDDDD
+				}),
+				hover:{
+					fill:new SolidFill({
+						color:0xDDDDDD
+					})
+				},
+				active:{
+					fill:new SolidFill({
+						color:0xCCCCCC
+					})
+				}
+			};
+			sheet["SliderTrackLight"]={
+				border:new SolidBorder({
 					weight:0
 				}),
 				filters:[],
 				fill:new SolidFill({
 					color:0x999999,
-					alpha:0.3
+					alpha:0.2
 				}),
 				hover:{
 					filters:[],

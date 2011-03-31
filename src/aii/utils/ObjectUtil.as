@@ -26,6 +26,8 @@ package aii.utils {
 		 * @return 合并后的对象。
 		 */
 		public static function merge(x:Object, y:Object):Object {
+			x=(x==null?{}:x);
+			y=(y==null?{}:y);
 			var result:Object = {};
 			var currentProperty:String;
 			for (currentProperty in x) {
@@ -44,6 +46,7 @@ package aii.utils {
 		 * @return 合并后的对象。
 		 */
 		public static function mergeTo(x:Object, y:Object):Object {
+			y=(y==null?{}:y);
 			if (x != null) {
 				var currentProperty:String;
 				//如果是动态对象

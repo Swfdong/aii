@@ -3,7 +3,7 @@ package aii.ui.graphics.border{
 	import aii.ui.graphics.BaseBorder;
 	
 	/**
-	 * SolidBorder类为Graphics对象指定单色填充的边框。
+	 * SolidBorder类为Graphics对象指定实线填充的边框。
 	 * @author Swfdong
 	 */
 	public class SolidBorder extends BaseBorder{

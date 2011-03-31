@@ -39,7 +39,7 @@ package aii.ui.managers{
 		protected static function enterframeHandler(event:Event):void{
 			var list:Dictionary=renderList,target:Object;
 			for (target in list) {
-				if(target.stage!=null){
+				if(target.stage!=null||target.visible==true){
 					target.validate();
 					delete list[target];
 				}

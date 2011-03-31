@@ -66,7 +66,7 @@ package aii.ui.graphics{
 		 * @param x 边框的横坐标。 
 		 * @param y 边框的纵坐标。
 		 */
-		public function draw(target:Graphics, width:Number, height:Number,drawFill:IGraphicFill=null,x:Number=0, y:Number=0):void{
+		public function draw(target:Graphics, width:Number, height:Number,drawFill:IGraphicFill=null,x:Number=0, y:Number=0,needFill:Boolean=true):void{
 			if(drawFill!=null){
 				//背景色彩
 				drawFill.beginFill(target,width,height);
@@ -77,8 +77,8 @@ package aii.ui.graphics{
 				//绘制边框
 				fill.beginFill(target,width,height);
 				GraphicManager.drawRoundRect(target,x, y, width, height, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius);
-				if(drawFill!=null){
-					GraphicManager.drawRoundRect(target,x+leftWeight, y+topWeight, width-leftWeight-rightWeight, height-topWeight-bottomWeight, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius);
+				if(needFill){
+					GraphicManager.drawRoundRect(target,x+leftWeight, y+topWeight, width-leftWeight-rightWeight, height-topWeight-bottomWeight, topLeftRadius-topWeight, topRightRadius-topWeight, bottomLeftRadius-bottomWeight, bottomRightRadius-bottomWeight);
 				}
 				fill.endFill(target);
 			}

@@ -1,7 +1,7 @@
  /*** * @author Swfdong * Aii列表组件 */package aii.ui.controls {	import aii.ui.core.*;	import aii.ui.styles.*;	import aii.ui.managers.GraphicManager;		import flash.events.MouseEvent;	import flash.filters.DropShadowFilter;
 	public class List extends UIComponent {		protected var _scrollLock:Boolean = false;		protected var _rowHeight:uint = 26;		protected var scrollSlider:Slider;
 		public function List(args:Object=null):void {			_width = _height = 150;			super(args);		}
-		//配置		override protected function config():void {			scrollSlider = new Slider({height:_height,width:10,parent: this});		}
+		//配置		override protected function config():void {			scrollSlider = new Slider({height:_height,width:10,lightStyle:true,parent: this});		}
 		//配置侦听		override protected function configEvents():void {			addEventListener(MouseEvent.MOUSE_OVER, mouseOverHandler, false, 0, true);			addEventListener(MouseEvent.MOUSE_DOWN, mouseDownHandler, false, 0, true);			addEventListener(MouseEvent.MOUSE_OUT, mouseOutHandler, false, 0, true);			addEventListener(MouseEvent.CLICK, mouseClickHandler, false, 0, true);		}
 		override protected function removeEvents():void {			removeEventListener(MouseEvent.MOUSE_OVER, mouseOverHandler);			removeEventListener(MouseEvent.MOUSE_DOWN, mouseDownHandler);			removeEventListener(MouseEvent.MOUSE_OUT, mouseOutHandler);			removeEventListener(MouseEvent.CLICK, mouseClickHandler);		}
 		//鼠标响应		protected function mouseOverHandler(event:MouseEvent):void {			state = 1;			invalidate(InvalidationType.STATE);		}

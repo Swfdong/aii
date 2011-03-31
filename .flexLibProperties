@@ -10,6 +10,8 @@
     <classEntry path="aii.utils.ObjectUtil"/>
     <classEntry path="aii.ui.styles.StyleSheet"/>
     <classEntry path="aii.utils.StyleUtil"/>
+    <classEntry path="aii.ui.styles.SilverBlueStyle"/>
+    <classEntry path="aii.ui.graphics.border.DoubleBorder"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
