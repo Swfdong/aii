@@ -1,7 +1,7 @@
 package aii.ui.controls.bases{
 	import aii.ui.core.*;
 	import aii.ui.factory.TextFactory;
-	import aii.ui.managers.GraphicManager;
+	import aii.ui.factory.GraphicFactory;
 	import aii.ui.managers.TextManager;
 	import aii.ui.styles.*;
 	
@@ -66,7 +66,7 @@ package aii.ui.controls.bases{
 			}
 			if (invalidType & InvalidationType.STATE) {
 				ui.graphics.clear();
-				GraphicManager.drawBox(ui.graphics, _width, _height, _style,state);
+				GraphicFactory.drawUIShape(ui.graphics,GraphicFactory.RECTANGLE, _width, _height, _style,state);
 				ui.filters = _style.getStyle("filters",state);
 				TextManager.setSize(textField, _style.getStyle("fontSize",state));
 				TextManager.setColor(textField, _style.getStyle("fontColor",state));

@@ -3,7 +3,8 @@ package aii.ui.styles{
 	import aii.ui.controls.bases.*;
 	import aii.ui.core.UIComponent;
 	import aii.ui.graphics.*;
-	import aii.ui.graphics.border.SolidBorder;
+	import aii.ui.graphics.fill.*;
+	import aii.ui.graphics.border.*;
 	
 	import flash.filters.*;
 	import flash.utils.Dictionary;
@@ -106,36 +107,6 @@ package aii.ui.styles{
 			sheet[CheckBox]={
 				filters:[new DropShadowFilter(1,90,0x0,0.3,6,4,1,1,true)]
 			};
-			//单选框样式
-			sheet[RadioButton]={
-				border:new SolidBorder({
-					radius:24,fill:new SolidFill({
-						color:0xAAAAAA
-					})
-				}),
-				hover:{
-					border:new SolidBorder({
-						radius:24,fill:new SolidFill({
-							color:0x3FB600
-						})
-					})
-				},
-				active:{
-					border:new SolidBorder({
-						radius:24,fill:new SolidFill({
-							color:0x3FB600
-						})
-					})
-				},
-				disabled:{
-					border:new SolidBorder({
-						radius:24,
-						fill:new SolidFill({
-							color:0x999999
-						})
-					})
-				}
-			};
 			//滑块样式
 			sheet["SliderTrack"]={
 				border:new SolidBorder({
@@ -159,7 +130,7 @@ package aii.ui.styles{
 					})
 				}
 			};
-			sheet["SliderTrackLight"]={
+			sheet["ListSliderTrack"]={
 				border:new SolidBorder({
 					weight:0
 				}),

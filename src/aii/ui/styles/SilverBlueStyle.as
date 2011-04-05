@@ -4,6 +4,7 @@ package aii.ui.styles{
 	import aii.ui.core.UIComponent;
 	import aii.ui.graphics.*;
 	import aii.ui.graphics.border.*;
+	import aii.ui.graphics.fill.*;
 	
 	import flash.filters.*;
 	/**
@@ -41,8 +42,7 @@ package aii.ui.styles{
 				fill:new GradientFill({
 					colors:[0xFFFFFF,0xF9F9F9,0xE9E9E9,0xF0F0F0],
 					alphas:[1,1,1,1],
-					ratios:[32,125,145,255],
-					rotation:90
+					ratios:[32,125,145,255]
 				}),
 				border:new DoubleBorder({
 					radius:3,
@@ -50,16 +50,14 @@ package aii.ui.styles{
 					fill:new GradientFill({
 						colors:[0xAAAAAA,0x888888,0x999999],
 						alphas:[1,1,1],
-						ratios:[0,140,255],
-						rotation:90
+						ratios:[0,140,255]
 					}),
 					innerBorder:new SolidBorder({
 						radius:2,
 						fill:new GradientFill({
 							colors:[0xFFFFFF,0xFFFFFF],
 							alphas:[1,0.5],
-							ratios:[20,240],
-							rotation:90
+							ratios:[20,240]
 						})
 					})
 				}),
@@ -69,18 +67,16 @@ package aii.ui.styles{
 						radius:3,
 						space:0,
 						fill:new GradientFill({
-							colors:[0x46B2FF,0x006BFF,0x279AFF],
+							colors:[0x199FFF,0x005CDB,0x0087FF],
 							alphas:[1,1,1],
-							ratios:[0,140,255],
-							rotation:90
+							ratios:[0,140,255]
 						}),
 						innerBorder:new SolidBorder({
 							radius:2,
 							fill:new GradientFill({
 								colors:[0xFFFFFF,0xFFFFFF],
 								alphas:[0.6,0.2],
-								ratios:[20,240],
-								rotation:90
+								ratios:[20,240]
 							})
 						})
 					}),
@@ -90,25 +86,22 @@ package aii.ui.styles{
 					fill:new GradientFill({
 						colors:[0xD0EAFF,0x9CD4FF,0x73C2F9,0xBFEDF6],
 						alphas:[1,1,1,1],
-						ratios:[32,125,145,255],
-						rotation:90
+						ratios:[32,125,145,255]
 					}),
 					border:new DoubleBorder({
 						radius:3,
 						space:0,
 						fill:new GradientFill({
-							colors:[0x46B2FF,0x006BFF,0x279AFF],
+							colors:[0x199FFF,0x005CDB,0x0087FF],
 							alphas:[1,1,1],
-							ratios:[0,140,255],
-							rotation:90
+							ratios:[0,140,255]
 						}),
 						innerBorder:new SolidBorder({
 							radius:2,
 							fill:new GradientFill({
 								colors:[0xFFFFFF,0xFFFFFF],
 								alphas:[0.6,0.2],
-								ratios:[20,240],
-								rotation:90
+								ratios:[20,240]
 							})
 						})
 					}),
@@ -140,10 +133,9 @@ package aii.ui.styles{
 					border:new SolidBorder({
 						radius:3,
 						fill:new GradientFill({
-							colors:[0x46B2FF,0x006BFF,0x279AFF],
-							alphas:[1,1,1],
-							ratios:[0,140,255],
-							rotation:90
+							colors:[0x3CADFF,0x0087FF],
+							alphas:[1,1],
+							ratios:[0,255]
 						})
 					}),
 					filters:[
@@ -157,8 +149,7 @@ package aii.ui.styles{
 				fill:new GradientFill({
 					colors:[0xFFFFFF,0xF0F0F0,0xE9E9E9,0xF0F0F0],
 					alphas:[1,1,1,1],
-					ratios:[32,125,145,255],
-					rotation:90
+					ratios:[32,125,145,255]
 				}),
 				border:new DoubleBorder({
 					radius:3,
@@ -166,99 +157,17 @@ package aii.ui.styles{
 					fill:new GradientFill({
 						colors:[0xAAAAAA,0x888888,0x999999],
 						alphas:[1,1,1],
-						ratios:[0,140,255],
-						rotation:90
+						ratios:[0,140,255]
 					}),
 					innerBorder:new SolidBorder({
 						radius:2,
 						fill:new GradientFill({
 							colors:[0xFFFFFF,0xFFFFFF],
 							alphas:[1,0.5],
-							ratios:[20,240],
-							rotation:90
+							ratios:[20,240]
 						})
 					})
 				})
-			};
-			//单选框样式
-			sheet[RadioButton]={
-				border:new DoubleBorder({
-					radius:24,
-					space:0,
-					fill:new GradientFill({
-						colors:[0xAAAAAA,0x888888,0x999999],
-						alphas:[1,1,1],
-						ratios:[0,140,255],
-						rotation:90
-					}),
-					innerBorder:new SolidBorder({
-						radius:24,
-						fill:new GradientFill({
-							colors:[0xFFFFFF,0xFFFFFF],
-							alphas:[1,0.5],
-							ratios:[20,240],
-							rotation:90
-						})
-					})
-				}),
-				hover:{
-					border:new DoubleBorder({
-						radius:24,
-						space:0,
-						fill:new GradientFill({
-							colors:[0x46B2FF,0x006BFF,0x279AFF],
-							alphas:[1,1,1],
-							ratios:[0,140,255],
-							rotation:90
-						}),
-						innerBorder:new SolidBorder({
-							radius:24,
-							fill:new GradientFill({
-								colors:[0xFFFFFF,0xFFFFFF],
-								alphas:[0.6,0.2],
-								ratios:[20,240],
-								rotation:90
-							})
-						})
-					}),
-					filters:[new GlowFilter(0x279AFF, 0.5, 5,5,1)]
-				},
-				active:{
-					fill:new GradientFill({
-						colors:[0xD0EAFF,0x9CD4FF,0x69C9FF,0xBFEDF6],
-						alphas:[1,1,1,1],
-						ratios:[32,125,145,255],
-						rotation:90
-					}),
-					border:new DoubleBorder({
-						radius:24,
-						space:0,
-						fill:new GradientFill({
-							colors:[0x46B2FF,0x006BFF,0x279AFF],
-							alphas:[1,1,1],
-							ratios:[0,140,255],
-							rotation:90
-						}),
-						innerBorder:new SolidBorder({
-							radius:24,
-							fill:new GradientFill({
-								colors:[0xFFFFFF,0xFFFFFF],
-								alphas:[0.6,0.2],
-								ratios:[20,240],
-								rotation:90
-							})
-						})
-					}),
-					filters:[new DropShadowFilter(1,90,0x000099,0.2,2,2,1,1)]
-				},
-				disabled:{
-					border:new SolidBorder({
-						radius:24,
-						fill:new SolidFill({
-							color:0x999999
-						})
-					})
-				}
 			};
 			//滑块样式
 			sheet["SliderTrack"]={
@@ -294,6 +203,7 @@ package aii.ui.styles{
 			}
 			sheet["ListSliderTrack"]={
 				border:new SolidBorder({
+					radius:3,
 					weight:0
 				}),
 				filters:[],
@@ -305,14 +215,14 @@ package aii.ui.styles{
 					filters:[],
 					fill:new SolidFill({
 						color:0x999999,
-						alpha:0.4
+						alpha:0.3
 					})
 				},
 				active:{
 					filters:[],
 					fill:new SolidFill({
 						color:0x999999,
-						alpha:0.5
+						alpha:0.4
 					})
 				}
 			};

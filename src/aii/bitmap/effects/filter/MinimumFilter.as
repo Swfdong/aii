@@ -14,7 +14,7 @@ package aii.bitmap.effects.filter {
 		private var _size:uint = 3;
 		
 		/**
-		 * 创建新的最小值滤波器对象。
+		 * 创建新的最小值滤波器实例。
 		 * @param data 要使用的输入位图图像。
 		 * @param size 指定的最小值滤波器尺寸。
 		 */

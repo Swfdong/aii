@@ -1,8 +1,10 @@
-package aii.ui.graphics{
+package aii.ui.graphics.fill{
 	import aii.utils.ObjectUtil;
 	
 	import flash.display.Graphics;
 	import flash.geom.Matrix;
+	import aii.ui.graphics.IGraphicFill;
+
 	/**
 	 * SolidFill类为Graphics对象指定单色填充。
 	 * @author Swfdong

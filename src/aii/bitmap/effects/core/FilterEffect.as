@@ -8,6 +8,7 @@ package aii.bitmap.effects.core{
 
 	/**
 	 * 滤镜位图效果基类，创建基于滤镜的位图效果请继承自此类。
+	 * @author Swfdong
 	 */
 	public class FilterEffect extends BitmapEffect{
 		protected var filter:BitmapFilter;

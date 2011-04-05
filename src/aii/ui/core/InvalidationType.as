@@ -1,2 +1,2 @@
- /*** * @author Swfdong * Aii组件重绘类型，使用位运算区分 */package aii.ui.core {
-	public class InvalidationType {		public static const ALL:uint = 255;		public static const LAYOUT:uint = 16;		public static const SCROLL:uint = 8;		public static const PROPERTY:uint = 4;		public static const TEXT:uint = 2;		//SIZE、STATE和STYLE需要重绘的内容基本一样		public static const SIZE:uint = 1;		public static const STATE:uint = 1;		public static const STYLE:uint = 1;	}}
+package aii.ui.core {
+	/**	 * InvalidationType类使用一系列静态常量持有组件的重绘类型。	 * @author Swfdong	 */	public class InvalidationType {		public static const ALL:uint = 255;		public static const LAYOUT:uint = 16;		public static const SCROLL:uint = 8;		public static const PROPERTY:uint = 4;		public static const TEXT:uint = 2;		//SIZE、STATE和STYLE需要重绘的内容基本一样		public static const SIZE:uint = 1;		public static const STATE:uint = 1;		public static const STYLE:uint = 1;	}}

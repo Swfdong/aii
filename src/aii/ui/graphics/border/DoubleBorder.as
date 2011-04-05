@@ -1,13 +1,13 @@
 package aii.ui.graphics.border{
-	import aii.ui.managers.GraphicManager;
+	import aii.ui.factory.GraphicFactory;
 	import aii.ui.graphics.*;
 	
 	import flash.display.Graphics;
 	/**
-	 * SolidBorder类为Graphics对象指定双层实线填充的边框。
+	 * DoubleBorder类为Graphics对象指定双层实线填充的边框。
 	 * @author Swfdong
 	 */
-	public class DoubleBorder extends BaseBorder{
+	public class DoubleBorder extends SolidBorder{
 		/**
 		 * 边框间隙。
 		 * @default 0
@@ -25,11 +25,9 @@ package aii.ui.graphics.border{
 		public function DoubleBorder(args:Object){
 			super(args);
 		}
-		override public function draw(target:Graphics, width:Number, height:Number,drawFill:IGraphicFill=null,x:Number=0, y:Number=0,needFill:Boolean=true):void{
-			super.draw(target, width, height,drawFill,x, y,needFill);
-			if(needFill){
-				innerBorder.draw(target, width-leftWeight-rightWeight-(space<<1), height-topWeight-bottomWeight-(space<<1),drawFill,x+leftWeight-space, y+topWeight+space);
-			}
+		override public function draw(target:Graphics, x:Number, y:Number,width:Number, height:Number,shape:IGraphicShape,sorb:uint=0):void{
+			super.draw(target, x,y,width, height,shape,sorb);
+			innerBorder.draw(target, x+weight-space, y+weight+space,width-((weight+space)<<1), height-((weight+space)<<1),shape,sorb);
 		}
 	}
 }

@@ -12,6 +12,12 @@
     <classEntry path="aii.utils.StyleUtil"/>
     <classEntry path="aii.ui.styles.SilverBlueStyle"/>
     <classEntry path="aii.ui.graphics.border.DoubleBorder"/>
+    <classEntry path="aii.ui.graphics.IGraphicBorder"/>
+    <classEntry path="aii.ui.graphics.IGraphicShape"/>
+    <classEntry path="aii.ui.graphics.shape.RectangleShape"/>
+    <classEntry path="aii.ui.core.SorptionType"/>
+    <classEntry path="aii.ui.graphics.shape.TickShape"/>
+    <classEntry path="aii.ui.graphics.shape.EllipseShape"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

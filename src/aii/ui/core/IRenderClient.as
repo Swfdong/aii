@@ -4,8 +4,13 @@ package aii.ui.core{
 	 * @author Swfdong
 	 */
 	public interface IRenderClient{
-		
+		/**
+		 * 立即验证渲染，渲染管理器通过对实现IRenderClient接口的对象内该方法的调用来进行分批渲染。
+		 */
 		function validate():void;
+		/**
+		 * 获取实例的渲染状态，渲染管理器通过实现IRenderClient接口的对象内该属性的判断来确定组件是否可以立即验证渲染。
+		 */
 		function get canValidate():Boolean;
 	}
 }
