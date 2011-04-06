@@ -7,7 +7,7 @@ package aii.ui.graphics.shape{
 	 * @author Swfdong
 	 */
 	public class EllipseShape implements IGraphicShape{
-		public function draw(target:Graphics, x:Number, y:Number, width:Number, height:Number, radius:Number=0, sorb:uint=0):void{
+		public function draw(target:Graphics, x:Number, y:Number, width:Number, height:Number, radius:Number=0, sorption:uint=0):void{
 			target.drawEllipse(x,y,width,height);
 		}
 	}

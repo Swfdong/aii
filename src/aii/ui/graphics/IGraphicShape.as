@@ -13,8 +13,8 @@ package aii.ui.graphics{
 		 * @param width 形状的宽度。 
 		 * @param height 形状的高度。 
 		 * @param radius 形状的圆角半径属性。实现有尖角的自定义形状时可选择性支持。
-		 * @param sorb 形状的吸附属性，多用于符合组件的绘制。内置形状中仅RectangleShape支持吸附属性，在实现自定义形状时可选择性支持。
+		 * @param sorption 形状的吸附属性，多用于符合组件的绘制。内置形状中仅RectangleShape支持吸附属性，在实现自定义形状时可选择性支持。
 		 */
-		function draw(target:Graphics,x:Number,y:Number,width:Number,height:Number,radius:Number=0,sorb:uint=0):void;
+		function draw(target:Graphics,x:Number,y:Number,width:Number,height:Number,radius:Number=0,sorption:uint=0):void;
 	}
 }

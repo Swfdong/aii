@@ -8,7 +8,7 @@ package aii.ui.graphics.shape{
 	 * @author Swfdong
 	 */
 	public class TickShape implements IGraphicShape{
-		public function draw(target:Graphics, x:Number, y:Number, width:Number, height:Number, radius:Number=0, sorb:uint=0):void{
+		public function draw(target:Graphics, x:Number, y:Number, width:Number, height:Number, radius:Number=0, sorption:uint=0):void{
 			var lw:Number=width/6;
 			var lh:Number=height/5;
 			target.moveTo(x+width-lw,y);

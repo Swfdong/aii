@@ -16,8 +16,8 @@
 		//鼠标点击		protected function handleClick():void {			_selected = !_selected;			if (_defaultHandler != null) {				_defaultHandler();			}		}
 		protected function endPress():void {			pressTimer.reset();			pressTimer.delay = 210;		}
 		//可用性改变		override protected function enabledChange():void {			mouseEnabled = _enabled;		}
-		//重绘		override protected function draw():void {			buttonMode = _enabled;			if (invalidType & InvalidationType.STATE) {				drawButtonGraphic();				ui.filters = _style.getStyle("filters",state);			}		}
-		//绘制按钮		protected function drawButtonGraphic():void {			ui.graphics.clear();			GraphicFactory.drawUIShape(ui.graphics,GraphicFactory.RECTANGLE,_width, _height,_style,state);		}
+		//重绘		override protected function draw():void {			buttonMode = _enabled;			if (invalidType & InvalidationType.STATE_OR_SIZE) {				drawButtonGraphic();				if (invalidType & InvalidationType.STATE) {					ui.filters = _style.getStyle("filters",state);				}			}		}
+		//绘制按钮		protected function drawButtonGraphic():void {			ui.graphics.clear();			GraphicFactory.drawUIShape(ui.graphics,GraphicFactory.RECTANGLE,_width, _height,_style,state,_sorption);		}
 		//选中状态		public function get selected():Boolean {			return _selected;		}
 		public function set selected(value:Boolean):void {			if (_selected != value) {				_selected = value;				invalidate(InvalidationType.STATE);			}		}
 		//重复按下		public function get pressRepeat():Boolean {			return _pressRepeat;		}

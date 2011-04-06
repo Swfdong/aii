@@ -31,12 +31,12 @@ package aii.ui.graphics.border{
 		public function SolidBorder(args:Object){
 			ObjectUtil.mergeTo(this,args);
 		}
-		public function draw(target:Graphics, x:Number, y:Number,width:Number, height:Number,shape:IGraphicShape,sorb:uint=0):void{
+		public function draw(target:Graphics, x:Number, y:Number,width:Number, height:Number,shape:IGraphicShape,sorption:uint=0):void{
 			if(weight>0){
 				//绘制边框
 				fill.beginFill(target,width,height);
-				shape.draw(target,x, y, width, height,radius,sorb);
-				shape.draw(target,x+weight, y+weight, width-(weight<<1), height-(weight<<1),radius-weight,sorb);
+				shape.draw(target,x, y, width, height,radius,sorption);
+				shape.draw(target,x+weight, y+weight, width-(weight<<1), height-(weight<<1),radius-weight,sorption);
 				fill.endFill(target);
 			}
 		}

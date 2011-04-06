@@ -9,21 +9,21 @@ package aii.ui.graphics.shape{
 	 * @author Swfdong
 	 */
 	public class RectangleShape implements IGraphicShape{
-		public function draw(target:Graphics, x:Number, y:Number, width:Number, height:Number,radius:Number=0, sorb:uint=0):void{
+		public function draw(target:Graphics, x:Number, y:Number, width:Number, height:Number,radius:Number=0, sorption:uint=0):void{
 			var topLeftRadius:Number, topRightRadius:Number, bottomLeftRadius:Number, bottomRightRadius:Number;
 			topLeftRadius=topRightRadius=bottomLeftRadius=bottomRightRadius=radius;
 			//如果需要绘制吸附边缘
-			if(sorb!=0){
-				if(sorb&SorptionType.TOP){
+			if(sorption!=0){
+				if(sorption&SorptionType.TOP){
 					topLeftRadius=topRightRadius=0;
 				}
-				if(sorb&SorptionType.LEFT){
+				if(sorption&SorptionType.LEFT){
 					topLeftRadius=bottomLeftRadius=0;
 				}
-				if(sorb&SorptionType.BOTTOM){
+				if(sorption&SorptionType.BOTTOM){
 					bottomLeftRadius=bottomRightRadius=0;
 				}
-				if(sorb&SorptionType.RIGHT){
+				if(sorption&SorptionType.RIGHT){
 					topRightRadius=bottomRightRadius=0;
 				}
 			}

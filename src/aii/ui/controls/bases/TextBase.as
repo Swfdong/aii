@@ -64,28 +64,32 @@ package aii.ui.controls.bases{
 			if (invalidType & InvalidationType.PROPERTY) {
 				textField.selectable = _enabled;
 			}
-			if (invalidType & InvalidationType.STATE) {
+			if (invalidType & InvalidationType.STATE_OR_SIZE) {
 				ui.graphics.clear();
 				GraphicFactory.drawUIShape(ui.graphics,GraphicFactory.RECTANGLE, _width, _height, _style,state);
-				ui.filters = _style.getStyle("filters",state);
-				TextManager.setSize(textField, _style.getStyle("fontSize",state));
-				TextManager.setColor(textField, _style.getStyle("fontColor",state));
-				if (state == 0 && (textField.text == "" || textField.text == _defaultText)) {
-					textField.text = _defaultText;
-					textField.displayAsPassword = false;
-				} else if (state == 2) {
-					if (textField.text == _defaultText) {
-						textField.text = "";
-						textField.displayAsPassword = _password;
-					} else if (_autoSelect) {
-						textField.setSelection(0, textField.length);
+				//状态改变
+				if (invalidType & InvalidationType.STATE) {
+					ui.filters = _style.getStyle("filters",state);
+					TextManager.setSize(textField, _style.getStyle("fontSize",state));
+					TextManager.setColor(textField, _style.getStyle("fontColor",state));
+					if (state == 0 && (textField.text == "" || textField.text == _defaultText)) {
+						textField.text = _defaultText;
+						textField.displayAsPassword = false;
+					} else if (state == 2) {
+						if (textField.text == _defaultText) {
+							textField.text = "";
+							textField.displayAsPassword = _password;
+						} else if (_autoSelect) {
+							textField.setSelection(0, textField.length);
+						}
 					}
 				}
-			}
-			if (invalidType & InvalidationType.SIZE) {
-				textField.width = _width - 8;
-				textField.x = ((_width - textField.width) >> 1);
-				textField.y = ((_height - textField.height) >> 1) + 1;
+				//尺寸改变
+				if (invalidType & InvalidationType.SIZE) {
+					textField.width = _width - 8;
+					textField.x = ((_width - textField.width) >> 1);
+					textField.y = ((_height - textField.height) >> 1) + 1;
+				}
 			}
 		}
 		//可用性改变

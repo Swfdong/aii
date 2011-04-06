@@ -25,9 +25,9 @@ package aii.ui.graphics.border{
 		public function DoubleBorder(args:Object){
 			super(args);
 		}
-		override public function draw(target:Graphics, x:Number, y:Number,width:Number, height:Number,shape:IGraphicShape,sorb:uint=0):void{
-			super.draw(target, x,y,width, height,shape,sorb);
-			innerBorder.draw(target, x+weight-space, y+weight+space,width-((weight+space)<<1), height-((weight+space)<<1),shape,sorb);
+		override public function draw(target:Graphics, x:Number, y:Number,width:Number, height:Number,shape:IGraphicShape,sorption:uint=0):void{
+			super.draw(target, x,y,width, height,shape,sorption);
+			innerBorder.draw(target, x+weight-space, y+weight+space,width-((weight+space)<<1), height-((weight+space)<<1),shape,sorption);
 		}
 	}
 }
